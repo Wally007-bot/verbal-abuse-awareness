@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.red-color {
+  color: rgb(133, 19, 19)
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+  min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+  background-color: indigo;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 45px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  z-index: 1000;
+}
+
+/* Sidebar Styling */
+#sidebar {
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Fully off-screen */
+  height: 100%;
+  width: 250px;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+/* Show Sidebar when active */
+#sidebar.active {
+  right: 0;
+}
+
+/* Sidebar Navigation */
+aside nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+aside nav ul li {
+  margin: 20px 0;
+}
+
+aside nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+aside nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  min-height: 100%;
+  grid-area: main;
+}
+
+/* Main Section Text */
+main section h2 {
+  color: indigo;
+}
+
+main section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+  background-color: indigo;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  grid-area: footer;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Overlay Styling */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the background */
+  z-index: 500; /* Below the sidebar but above the content */
+  display: none; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay when sidebar is active */
+#overlay.active {
+  display: block;
+}
