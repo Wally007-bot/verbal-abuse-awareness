@@ -130,3 +130,12 @@ footer {
 #overlay.active {
   display: block;
 }
+
+.email-link {
+  color: white;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
